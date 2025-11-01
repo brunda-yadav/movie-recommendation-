@@ -1,0 +1,66 @@
+# recommendation.py
+
+import pandas as pd
+from sklearn.preprocessing import MultiLabelBinarizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+# -----------------------------
+# Step 1: Load the dataset
+# -----------------------------
+movies = pd.read_csv("movies.csv")
+
+# -----------------------------
+# Step 2: Preprocess genres
+# -----------------------------
+# Split genres into lists
+movies['genre'] = movies['genre'].str.split('|')
+
+# Convert genre lists into binary features
+mlb = MultiLabelBinarizer()
+genre_features = mlb.fit_transform(movies['genre'])
+
+# -----------------------------
+# Step 3: Compute similarity
+# -----------------------------
+similarity = cosine_similarity(genre_features)
+
+# -----------------------------
+# Step 4: Recommendation function
+# -----------------------------
+def recommend_movies(movie_name, n=5):
+    # Check if movie exists
+    if movie_name not in movies['movie_name'].values:
+        return f"Sorry, '{movie_name}' not found in the dataset."
+    
+    # Get index of the movie
+    idx = movies[movies['movie_name'] == movie_name].index[0]
+    
+    # Get similarity scores
+    sim_scores = list(enumerate(similarity[idx]))
+    
+    # Sort by similarity (highest first)
+    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+    
+    # Exclude the movie itself
+    sim_scores = sim_scores[1:n+1]
+    
+    # Get recommended movie indices
+    movie_indices = [i[0] for i in sim_scores]
+    
+    # Return recommended movie names
+    return movies['movie_name'].iloc[movie_indices].tolist()
+
+# -----------------------------
+# Step 5: Test the recommendation
+# -----------------------------
+if __name__ == "__main__":
+    movie_to_test = "Inception"  # Change this to any movie in your CSV
+    recommended = recommend_movies(movie_to_test, n=5)
+    
+    print(f"Movies similar to '{movie_to_test}':")
+    if isinstance(recommended, list):
+        for m in recommended:
+            print(m)
+    else:
+        print(recommended)
+

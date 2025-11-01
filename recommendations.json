@@ -1,0 +1,22 @@
+{
+  "Inception": ["Parasite", "Interstellar", "The Dark Knight", "Titanic", "Spirited Away"],
+  "The Dark Knight": ["Inception", "Interstellar", "Parasite", "Gladiator", "Avengers: Endgame"],
+  "Titanic": ["The Shawshank Redemption", "Parasite", "Your Name", "The Godfather", "Joker"],
+  "Spirited Away": ["Your Name", "Howl's Moving Castle", "My Neighbor Totoro", "Coco", "Inception"],
+  "Parasite": ["Inception", "The Dark Knight", "Titanic", "Your Name", "The Godfather"],
+  "Your Name": ["Spirited Away", "Howl's Moving Castle", "Inception", "Titanic", "Parasite"],
+  "Interstellar": ["Inception", "The Dark Knight", "Parasite", "Gladiator", "Avengers: Endgame"],
+  "The Godfather": ["Pulp Fiction", "Joker", "Titanic", "The Dark Knight", "Inception"],
+  "Avengers: Endgame": ["The Dark Knight", "Interstellar", "Deadpool", "Black Panther", "Inception"],
+  "Joker": ["The Godfather", "Pulp Fiction", "Titanic", "Parasite", "Gladiator"],
+  "The Shawshank Redemption": ["Titanic", "Parasite", "The Godfather", "Pulp Fiction", "Your Name"],
+  "Pulp Fiction": ["The Godfather", "Joker", "Titanic", "Gladiator", "The Dark Knight"],
+  "The Lion King": ["Coco", "My Neighbor Totoro", "Spirited Away", "Your Name", "Howl's Moving Castle"],
+  "Coco": ["The Lion King", "Spirited Away", "Your Name", "My Neighbor Totoro", "Howl's Moving Castle"],
+  "Gladiator": ["The Dark Knight", "Interstellar", "Inception", "Joker", "Avengers: Endgame"],
+  "Your Lie in April": ["Your Name", "Spirited Away", "Howl's Moving Castle", "My Neighbor Totoro", "Coco"],
+  "Howl's Moving Castle": ["Spirited Away", "Your Name", "My Neighbor Totoro", "Coco", "Your Lie in April"],
+  "Deadpool": ["Avengers: Endgame", "Black Panther", "The Dark Knight", "Gladiator", "Inception"],
+  "Black Panther": ["Avengers: Endgame", "Deadpool", "The Dark Knight", "Gladiator", "Inception"],
+  "My Neighbor Totoro": ["Spirited Away", "Your Name", "Howl's Moving Castle", "Coco", "The Lion King"]
+}
