@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let recommendations = {};
 
 // Load the JSON file
@@ -12,6 +13,8 @@ loadRecommendations();
 function showRecommendations() {
     const movie = document.getElementById('movieInput').value;
     const list = document.getElementById('results');
+=======
+>>>>>>> cc0fb9e78d96c96c3b12e6485a8b5fed70c20e3a
     list.innerHTML = '';
 
     if (recommendations[movie]) {
